@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+    <style> 
+    /* สิ่งที่อยู่ตรงนี้ มีไว้แค่ให้ Dev อ่าน  */
+        /*body{
+            background-color: gray;
+        }
+        #register{
+            color: aqua;
+        }
+        .form{
+            border-radius: 20px ;
+            border:3px solid green;
+        }*/
+        @font-face {
+            font-family:'kanit' ;
+            src: url('./Kanit/Kanit-Regular.ttf');
+        }
+        
+        body{
+            font-family: 'kanit';
+          background-color: rgb(229, 253, 214);
+          font-size: 14px;
+
+        }
+        
+        /*#register{
+            font-size: 50px;
+            color:rgb(0, 0, 0);
+            font-weight: 800;
+            border: 3px solid darkcyan;/*ความหนาขอบ กับสีขอบ
+            border-radius: 20px;
+            padding-left: 10%;
+            margin-bottom: 20px;
+            background-color: rgb(246, 255, 0);
+            text-align: center;           
+        }*/
+        
+        #register{
+            font-size: 2rem;/*2em=2เท่าของตัวอื่นๆ*/
+        }
+        .header-form{
+            font-weight: 800;
+           
+        }
+        .container{
+           width: 400px;
+           margin-left: auto;
+           margin-right: auto;
+        }
+        .header{
+            font-size: 24px;
+            text-align: center;
+        }
+        .header-form{
+            width:140px;
+        }
+        .flex{
+            display: flex;
+        }
+        .form-input{
+            margin-bottom: 10px ;
+        }
+        input.form,textarea{
+            border: 1 px  gainsboro solid;
+            width: 100%;
+        }
+        .center{
+            text-align: center;
+        }
+        .button{
+            border: 0px; 
+            width :100%;
+            height: 40px;
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        /*.image{
+            background-image:url( https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstJzJyqWr9M_isAVpAflbLvit-GSJem3eFg&usqp=CAU);
+            height: 225px;
+            width:224px;
+            background-size:cover ;
+            background-position: top left;
+            background-repeat:no-repeat ;ทำให้ภาพไม่ซ้อน
+        }*/
+
+
+        /* margin=กรอบนอก pading */
+        /* boder เอาไว้ปรับแต่ pading */
+        /* padding=กรอบที่มี่ตัวอักษรอยู่ */
+        /*.form{
+            display: block;
+            border-radius: 20px;
+        }*/
+
+        /* .gender{
+            display: flex;
+            flex-direction:;
+        }
+         */
+   
+    </style>
+</head>
+<body>
+   <!-- <div class="left">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstJzJyqWr9M_isAVpAflbLvit-GSJem3eFg&usqp=CAU">
+   </div>
+   <div style="color: rgb(255, 0, 0);font-size: 24px;">hello</div>เขียนแบบไม่ต้องเเท็ก
+   <div style="clear: both;"></div> -->
+
+    <!-- <div class="container">
+        <div class="item-left">Left</div>
+        <div class="item-right">Right</div>
+     </div>
+     <div class="grid-container">
+        <div class="grid-item">item1</div>
+        <div class="grid-item">item2</div>
+        <div class="grid-item">item3</div>
+        <div class="grid-item">item4</div>
+     </div> -->
+
+     <!-- <div class="image">hi</div> -->
+
+     <div class="container">
+    <div class="header">
+        Register Form
+    </div>
+    <div class="flex form-input">
+    <div class="header-form">ชื่อจริง</div>
+    <input class="form" type="text">
+   </div>
+   <div class="flex form-input">
+    <div class="header-form">นามสกุล</div>
+    <input class="form" type="text">
+</div>
+    <div class="flex form-input">
+        <div class="header-form">อายุ</div>
+      <input class="form"type="number" min="0" max="100">
+    </div>
+    <div class="flex gender form-input"> 
+        <div class="header-form"> เพศ </div>  
+    <div>
+    <!-- <div class="gender"> -->
+        <input  name="gender" type="radio">ชาย  
+    <!-- <div class="gender"> -->
+        <input  name="gender" type="radio">หญิง   
+    <!-- <div class="gender"> -->
+        <input  name="gender" type="radio">ไม่ระบุ
+    </div>
+   </div><br>
+   <div class="form-input">
+    <div class="header-form">สิ่งที่สนใจ</div>
+    <div>
+        <input  name="interest" type="checkbox">สาวๆ
+    </div>
+    <div>
+        <input  name="interest" type="checkbox">หญิง
+    </div>
+    <div>
+        <input  name="interest" type="checkbox">สะตรี
+    </div>
+   </div>
+   <div>
+     คำอธิบายตัวตนเพิ่มเติม
+      <div>
+        <textarea></textarea>
+      </div>
+   </div>
+   <div>
+    <div class="center">
+        <button class="button">ส่งข้อมูล</button>
+    </div>
+    
+    <!-- <input type="submit" value="ส่งข้อมูล"> -->
+   </div>
+</div>
+    
+</body>
+</html>

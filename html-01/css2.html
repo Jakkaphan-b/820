@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tom::first-letter{/*เปลี่ยนแปลงตัวแรก*/
+            color: red;
+            font-size: 30px;
+
+        }
+        .tom::before{/*เปลี่ยนแปลงตัวแรก*/
+            content: "?";
+        }
+        
+        .smile::after{/*เพิ่มอะไรต่อท้าย*/
+            content: "👌";
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="tom smile">Testtom</div>
+</body>
+</html>

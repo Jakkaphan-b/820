@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .botton{
+        border:0;
+        padding:20px;
+        background-color:gray;
+        border-radius: 10px;
+    }
+    .botton:hover{/*ชี้แล้วค้าง*/
+        background-color: aqua;
+    }
+    .botton:active{/*กดแล้วเปลี่ยนสี*/
+        background-color: red;
+    }
+    .botton:focus{/*กดแล้วเปลี่ยนสัค้าง*/
+        background-color: yellow;
+    }
+    input:focus{
+     background-color: yellow;
+    }
+    .container .item:first-child{
+       background-color: red;
+    }
+    .container .item:nth-child(3){
+       background-color: rgb(0, 255, 60);
+    }
+    .container .item:last-child{
+       background-color: rgb(60, 0, 255);
+    }
+</style>
+</head>
+<body>
+    <input type="text">
+    <button class="botton">ปุ่ม</button>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+   
+</body>
+</html>
