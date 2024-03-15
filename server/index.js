@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const mysql = require('mysql2/promise');
 const cors = require('cors');
-app.use(bodyParser.json());
-app.use(cors())
 
+app.use(bodyParser.json());
+app.use(cors());
 const port = 8000;
 // สำหรับเก็บ users
+let users = []
+let counter = 1;
 let conn = null
 
 const initMySQL = async () => {
@@ -20,10 +22,6 @@ const initMySQL = async () => {
   })
 }
 
-
- 
-
-
  // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/users',async (req, res) => {
   const results = await conn.query('SELECT * FROM users')
@@ -35,7 +33,7 @@ app.get('/users',async (req, res) => {
 app.post('/users',async (req, res) => {
   try {
     let user = req.body;
-    
+    const results = await conn.query('INSERT INTO users SET ?', user)
     res.json({
       message: 'insert user successfully',
       data: results[0]
@@ -79,7 +77,9 @@ app.put('/users/:id',async (req, res) => {
       let id = req.params.id;
       let updateUser = req.body;
       let user = req.body;
+      
       const results = await conn.query('UPDATE users SET ? WHERE id =?',[updateUser,id])
+      
       res.json({
         message: 'update user successfully',
         data: results[0]
@@ -95,23 +95,29 @@ app.put('/users/:id',async (req, res) => {
   
 
 // path = DELETE /users/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
-app.delete('/users/:id', async (req, res) => {
-  try {
-    let id = req.params.id;
-    //หาก่อนว่า index ของ user ที่ต้องการลบอยู่ที่ index ไหน
-   const results = await conn.query('DELETE users SET ? WHERE id =?',id)
-    //ลบ users ออก
+app.delete('/users/:id', async(req, res) => {
+  try{
+    let id = req.params.id
+    const result = await conn.query('DELETE FROM users WHERE id = ?',[id])
+    
     res.json({
-      message: 'Delete user successfully',
-      data: results[0]
+      message: 'delete user successfully',
+      data: result[0]
     })
-  }catch(error){
-    console.log("error message:", error.message);
-    res.status(500).json({
-      message: 'something went wrong',
-    })
-  } 
-})
+    } catch (error) {
+      res.status(500).json({
+        message: 'something went wrong',
+        errorMessage: error.message
+      })
+    }
+  })
+ 
+  //หาก่อนว่า index ของ user ที่ต้องการลบอยู่ที่ index ไหน
+  //let seletedIndex = users.findIndex(user => user.id == id)
+  //ลบ users ออก
+  //users.splice(seletedIndex, 1)
+  
+  //})
 
 app.listen(port, async (req, res) => {
   await initMySQL()
