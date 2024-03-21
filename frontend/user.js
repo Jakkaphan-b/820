@@ -1,11 +1,9 @@
+//1.loat uers ทั้งหมดจาก API แล้วแสดงผลในหน้าเว็บ  http://localhost:8000
+//2. นำ user ที่โหลดมาใส่กลับเข้าไปใน html
 const BASE_URL = 'http://localhost:8000'
-
-
-
 window.onload = async () => {
     await loadData()
 }
-
 const loadData = async () => {
     console.log('on load')
     //1.load user ทั้งหมดออกมาจาก API

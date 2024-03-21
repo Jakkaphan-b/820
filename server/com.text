@@ -1,6 +1,6 @@
 docker ps
 docker ps --all
-docker stop CONTALNER ID or NAMES
+docker p CONTALNER ID or NAMES
 docker rm CONTALNER ID or NAMES
 docker run hello-world
 docker run nginx

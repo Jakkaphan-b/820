@@ -39,8 +39,6 @@ window.onload = async () => {
                     interestDOMs[i].checked = true
                 }
             }
-
-
         } catch (error) {
             console.log("Error", error);
         }
@@ -115,19 +113,16 @@ const submitData = async () => {
             message = "แก้ไขข้อมูลเรียบร้อย";
             console.log('response', response.data)
         }
-
         messageDOM.innerText = message;
         messageDOM.className = "message success"
     } catch (error) {
         console.log('error message', error.message)
         console.log("error", error.errors)
-
         if (error.response) {
             console.log(error.response.data.message)
             error.message = error.response.data.message
             error.errors = error.response.data.errors
         }
-
         let htmlData = '<div>'
         htmlData += `<div>${error.message}</div>`
         htmlData += '<ul>'
@@ -136,14 +131,7 @@ const submitData = async () => {
         }
         htmlData += '</ul>'
         htmlData += '</div>'
-
-
-
-
         messageDOM.innerHTML = htmlData
         messageDOM.className = "message danger"
     }
-
-
-
 }
